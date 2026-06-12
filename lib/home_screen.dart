@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:trilink_assignment/api_int/screen/api_screen.dart';
 import 'package:trilink_assignment/login/screen/login_screen.dart';
 import 'package:trilink_assignment/profile/screens/profile_screen.dart';
-import 'package:trilink_assignment/to_do_app.dart';
+import 'package:trilink_assignment/todo/screen/todo_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -53,7 +53,7 @@ class HomeScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const ToDoApp()),
+                  MaterialPageRoute(builder: (context) => const ToDoScreen()),
                 );
               },
               child: const Text('Task 4 - To-Do CRUD App'),

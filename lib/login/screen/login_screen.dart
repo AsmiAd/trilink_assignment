@@ -22,7 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset('assets/logo.png', width: 80, height: 80),
+                  Image.asset('assets/images/logo.png', width: 80, height: 80),
                   SizedBox(width: 10),
                   Text(
                     'EDUCA\n APP',
