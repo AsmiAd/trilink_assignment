@@ -15,9 +15,9 @@ class ProfileInfoRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Icon(icon),
+        Icon(icon, size: 28),
 
         const SizedBox(width: 12),
 

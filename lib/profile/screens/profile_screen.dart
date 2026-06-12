@@ -7,41 +7,59 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //Profile
-      appBar: AppBar(title: const Text('Profile'), centerTitle: true),
+      backgroundColor: Colors.grey[100],
       body: SafeArea(
         child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(height: 20),
+              const Text(
+                "Profile",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 0.2,
+                ),
+              ),
+
+              SizedBox(height: 20),
 
               //Profile picture with edit icon
-              Center(
-                child: Stack(
-                  children: [
-                    CircleAvatar(
-                      radius: 60,
-                      backgroundImage: AssetImage('assets/images/profile.jpg'),
+              Stack(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(color: Colors.white, width: 4),
                     ),
-                    Positioned(
-                      bottom: 0,
-                      right: 0,
-                      child: Container(
-                        padding: const EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: const Icon(Icons.edit, size: 18),
+                    child: CircleAvatar(
+                      radius: 60,
+                      backgroundImage: AssetImage(
+                        'assets/images/profile.jpg',
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                  Positioned(
+                    bottom: 0,
+                    right: 0,
+                    child: Container(
+                      padding: const EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: const Icon(Icons.mode_edit_outlined, size: 18),
+                    ),
+                  ),
+                ],
               ),
 
               //Personal info card
               Card(
                 margin: const EdgeInsets.all(16),
+                color: Colors.white,
                 child: Padding(
                   padding: const EdgeInsets.all(16),
                   child: Column(
@@ -98,6 +116,7 @@ class ProfileScreen extends StatelessWidget {
               //Account info card
               Card(
                 margin: const EdgeInsets.all(16),
+                color: Colors.white,
                 child: Padding(
                   padding: const EdgeInsets.all(16),
                   child: Column(
@@ -125,6 +144,10 @@ class ProfileScreen extends StatelessWidget {
       ),
 
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
+        selectedItemColor: const Color(0xFF00B686),
+        unselectedItemColor: Colors.grey[500],
+        showUnselectedLabels: true,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined),
@@ -150,4 +173,3 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 }
-
